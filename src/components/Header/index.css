@@ -1,0 +1,36 @@
+.header-container {
+  background-color: #272727;
+  height: 15vh;
+  padding: 20px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.logout-button {
+  color: #ffffff;
+  background-color: #6366f1;
+  padding-left: 10px;
+  padding-right: 10px;
+  padding: 10px;
+  cursor: pointer;
+  outline: none;
+  border: none;
+  border-radius: 7px;
+}
+
+.link-item {
+  text-decoration: none;
+  color: #ffffff;
+  margin-right: 10px;
+}
+
+.logo-image {
+  width: 15%;
+}
+
+.home-jobs {
+  display: flex;
+  align-items: center;
+  list-style-type: none;
+}
