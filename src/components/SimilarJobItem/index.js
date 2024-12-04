@@ -1,9 +1,9 @@
-import {IoIosStar} from 'react-icons/io'
-import {IoLocationSharp, IoBagSharp} from 'react-icons/io5'
+import {BsFillBriefcaseFill, BsStarFill} from 'react-icons/bs'
+import {MdLocationOn} from 'react-icons/md'
 import './index.css'
 
 const SimilarJobItem = props => {
-  const {similarJobs} = props
+  const {jobDetails} = props
   const {
     companyLogoUrl,
     employmentType,
@@ -11,34 +11,37 @@ const SimilarJobItem = props => {
     location,
     rating,
     title,
-  } = similarJobs
+  } = jobDetails
   return (
-    <li className="each-item">
-      <div className="logo-rating-container">
-        <img
-          src={companyLogoUrl}
-          alt="similar job company logo"
-          className="company-logo"
-        />
-        <div className="title-rating">
-          <p>{title}</p>
-          <div className="star-rating">
-            <IoIosStar className="star-image" />
-            <p>{rating}</p>
+    <li className="similar-job-item">
+      <div className="logo-title-location-container">
+        <div className="logo-title-container">
+          <img
+            src={companyLogoUrl}
+            alt="similar job company logo"
+            className="company-logo"
+          />
+          <div className="title-rating-container">
+            <h1 className="title-heading">{title}</h1>
+            <div className="rating-container">
+              <BsStarFill className="rating-icon" />
+              <p className="rating-heading">{rating}</p>
+            </div>
+          </div>
+        </div>
+        <h1 className="description-heading">Description</h1>
+        <p className="description-text">{jobDescription}</p>
+        <div className="location-employee-container">
+          <div className="location-container">
+            <MdLocationOn className="location-icon" />
+            <p className="location-heading">{location}</p>
+          </div>
+          <div className="employee-type-container">
+            <BsFillBriefcaseFill className="brief-case-icon" />
+            <p className="employee-type-heading">{employmentType}</p>
           </div>
         </div>
       </div>
-      <div className="location-jobtype">
-        <div className="location-container">
-          <IoLocationSharp />
-          <p className="location-job">{location}</p>
-          <IoBagSharp />
-          <p className="location-job">{employmentType}</p>
-        </div>
-      </div>
-      <hr />
-      <h1>Description</h1>
-      <p className="job-description">{jobDescription}</p>
     </li>
   )
 }
